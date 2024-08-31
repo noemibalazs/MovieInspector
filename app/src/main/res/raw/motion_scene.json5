@@ -1,0 +1,53 @@
+{
+  ConstraintSets: {
+    start: {
+      headerImage: {
+        width: "parent",
+        height: 270,
+        top: [
+          'parent',
+          'top',
+          0
+        ]
+      },
+      title: {
+        top: [
+          'parent',
+          'top'
+        ],
+      }
+    },
+    end: {
+      headerImage: {
+        width: "parent",
+        height: 90,
+        top: [
+          'parent',
+          'top',
+          0
+        ]
+      },
+      title: {
+        start: [
+          'headerImage',
+          'start',
+          20
+        ],
+        bottom: [
+          'headerImage',
+          'bottom'
+        ],
+        scaleX: 0.7,
+        scaleY: 0.7,
+        pivotX: 0
+      }
+    },
+  },
+  Transitions: {
+    default: {
+      from: 'start',
+      to: 'end',
+      pathMotionArc: 'startHorizontal'
+    }
+  }
+}
