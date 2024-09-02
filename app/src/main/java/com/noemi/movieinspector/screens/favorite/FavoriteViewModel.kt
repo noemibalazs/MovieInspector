@@ -34,7 +34,7 @@ class FavoriteViewModel @Inject constructor(
         loadFavoriteMovies()
     }
 
-    private fun loadFavoriteMovies() {
+    internal fun loadFavoriteMovies() {
         viewModelScope.launch {
             _loadingState.emit(true)
 

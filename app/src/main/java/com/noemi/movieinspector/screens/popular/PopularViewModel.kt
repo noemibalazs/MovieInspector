@@ -37,7 +37,7 @@ class PopularViewModel @Inject constructor(
         loadPopularMovies()
     }
 
-    private fun loadPopularMovies() {
+    internal fun loadPopularMovies() {
         viewModelScope.launch {
             _loadingState.emit(true)
 

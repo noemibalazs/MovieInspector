@@ -38,7 +38,7 @@ class TopRatedViewModel @Inject constructor(
         loadTopRatedMovies()
     }
 
-    private fun loadTopRatedMovies() {
+    internal fun loadTopRatedMovies() {
         viewModelScope.launch {
             _loadingState.emit(true)
 
