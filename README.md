@@ -21,4 +21,4 @@ Screenshots:
 
 ![Screenshot_20240902_193955_Movie Inspector](https://github.com/user-attachments/assets/af597eca-fdb1-4460-bd33-6a9e6b05756e)
 
-![Screenshot_20240902_193955_Movie Inspector](https://github.com/user-attachments/assets/eea8bf5d-89cd-46bb-87c0-e5ecbff7cfe6)
+![Screenshot_20240902_193949_Movie Inspector](https://github.com/user-attachments/assets/17611d8c-acdf-46d9-9902-f0d58f714c4a)
