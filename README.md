@@ -15,6 +15,22 @@ Idea:
 7. Use MotionLayout to move and animate the movie details UI elements
 8. Add unit tests using Turbine and MockK
 
+Libraries:
+
+1. Hilt
+2. Jetpack Compose
+3. Coroutines
+4. Flow
+5. Room
+6. Retrofit
+7. HorizontalPager and TabRow
+8. MotionLayout
+9. Coil
+10. MVVM architecture
+11. Material Design 3
+12. Turbine
+13. MockK
+
 Screenshots:
 
 ![Screenshot_20240902_193917_Movie Inspector](https://github.com/user-attachments/assets/eb971253-95da-4605-b355-d3072029cf28)
