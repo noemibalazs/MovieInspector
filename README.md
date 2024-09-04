@@ -14,7 +14,8 @@ Idea:
 6. Use TabRow and HorizontalPager for navigation
 7. Use MotionLayout to move and animate the movie details UI elements
 8. Add unit tests using Turbine and MockK
-
+9. Add instrumentation tests using Espresso
+ 
 Libraries:
 
 1. Hilt
@@ -30,6 +31,7 @@ Libraries:
 11. Material Design 3
 12. Turbine
 13. MockK
+14. Espresso
 
 Screenshots:
 
