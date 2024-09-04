@@ -4,7 +4,17 @@
     <string name="label_top_rated">Top Rated</string>
     <string name="label_popular">Popular</string>
     <string name="label_favorite">Favorite</string>
+    <string name="label_tab_row_tag">Tab Row Tag</string>
+    <string name="label_pager_tag">Pager Tag</string>
+    <string name="label_lazy_column_tag">Lazy Column Tag</string>
+    <string name="label_movie_item_tag">Movie Item Tag</string>
+    <string name="label_movie_container_tag">Movie Container Tag</string>
+    <string name="label_movie_content_tag">Movie Content Tag</string>
+    <string name="label_movie_title_tag">Movie Title Tag</string>
+    <string name="label_movie_screenshot_tag">Movie Screenshot Tag</string>
     <string name="label_summary">Summary</string>
+    <string name="label_summary_tag">Summary Tag</string>
+    <string name="label_icon_down_tag">Icon Down Tag</string>
     <string name="label_trailers">Trailers</string>
     <string name="label_reviews">Reviews</string>
     <string name="label_toast_message">In order to play a trailer, please turn on your internet connection!</string>

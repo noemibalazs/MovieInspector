@@ -45,7 +45,7 @@ class MoviesActivity : ComponentActivity() {
         setContent {
             MovieInspectorTheme {
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.primary) {
-                    MovieApp()
+                    MoviesApp()
                 }
             }
         }

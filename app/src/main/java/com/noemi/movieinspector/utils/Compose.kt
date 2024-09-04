@@ -94,7 +94,8 @@ fun MovieLazyGrid(movies: LazyPagingItems<Movie>, onMovieClicked: (Movie) -> Uni
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         modifier = modifier
             .fillMaxSize()
-            .background(Color.White),
+            .background(Color.White)
+            .testTag(stringResource(id = R.string.label_lazy_column_tag)),
         content = {
             items(
                 count = movies.itemCount
@@ -119,7 +120,8 @@ fun MovieItem(movie: Movie, onMovieClicked: (Movie) -> Unit, modifier: Modifier 
                 onMovieClicked
                     .invoke(movie)
                     .also { context.toMovieDetails(movie.id) }
-            },
+            }
+            .testTag(stringResource(id = R.string.label_movie_item_tag)),
         contentAlignment = Alignment.Center
     ) {
         AsyncImage(

@@ -48,6 +48,7 @@ import androidx.compose.ui.input.nestedscroll.NestedScrollConnection
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -114,7 +115,8 @@ fun MotionContainer(
     trailers: List<Trailer>,
     reviews: List<Review>,
     activeNetwork: Boolean,
-    onMovieDetails: () -> Pair<String, String>
+    onMovieDetails: () -> Pair<String, String>,
+    modifier: Modifier = Modifier
 ) {
     val context = LocalContext.current
 
@@ -152,7 +154,7 @@ fun MotionContainer(
 
     val progress = 1 - (toolbarHeight.value - minHeight) / (maxHeight - minHeight)
 
-    Column {
+    Column(modifier = modifier.testTag(stringResource(id = R.string.label_movie_container_tag))) {
         MotionLayout(
             motionScene = MotionScene(content = motionScene),
             progress = progress
@@ -162,11 +164,14 @@ fun MotionContainer(
                 model = movie.getPoster(context), contentDescription = null,
                 modifier = Modifier
                     .fillMaxSize()
-                    .layoutId("headerImage"),
+                    .layoutId("headerImage")
+                    .testTag(stringResource(id = R.string.label_movie_screenshot_tag)),
                 contentScale = ContentScale.Crop
             )
             Text(
-                modifier = Modifier.layoutId("title"),
+                modifier = Modifier
+                    .layoutId("title")
+                    .testTag(stringResource(id = R.string.label_movie_title_tag)),
                 text = movie.title,
                 fontSize = 30.sp,
                 color = Color.White
@@ -201,7 +206,8 @@ fun MovieContent(
     LazyColumn(
         modifier = modifier
             .fillMaxWidth()
-            .nestedScroll(scrollConnection),
+            .nestedScroll(scrollConnection)
+            .testTag(stringResource(id = R.string.label_movie_content_tag)),
         state = lazyState,
         contentPadding = PaddingValues(horizontal = 20.dp, vertical = 20.dp)
     ) {
@@ -249,7 +255,8 @@ fun MovieContent(
 fun MovieShortDescription(
     movie: Movie,
     state: LazyListState,
-    size: Int, modifier: Modifier = Modifier
+    size: Int,
+    modifier: Modifier = Modifier
 ) {
 
     val scope = rememberCoroutineScope()
@@ -268,7 +275,8 @@ fun MovieShortDescription(
             Text(
                 text = stringResource(id = R.string.label_summary),
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
-                style = MaterialTheme.typography.bodyLarge
+                style = MaterialTheme.typography.bodyLarge,
+                modifier = modifier.testTag(stringResource(id = R.string.label_summary_tag))
             )
 
             Icon(
@@ -282,6 +290,7 @@ fun MovieShortDescription(
                             state.scrollToItem(size)
                         }
                     }
+                    .testTag(stringResource(id = R.string.label_icon_down_tag))
             )
         }
 

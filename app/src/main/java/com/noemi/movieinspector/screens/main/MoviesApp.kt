@@ -30,14 +30,16 @@ import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.platform.testTag
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.noemi.movieinspector.R
 import com.noemi.movieinspector.utils.NoNetworkConnection
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun MovieApp() {
+fun MoviesApp() {
 
     val viewModel = hiltViewModel<MoviesViewModel>()
     val hasNetworkConnection by viewModel.networkState.collectAsStateWithLifecycle()
@@ -67,7 +69,9 @@ private fun MovieTabLayout(tabs: List<Int>, pagerState: PagerState, modifier: Mo
 
     PrimaryTabRow(
         selectedTabIndex = tabIndex,
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier
+            .fillMaxWidth()
+            .testTag(stringResource(id = R.string.label_tab_row_tag)),
         containerColor = MaterialTheme.colorScheme.onSecondaryContainer,
         indicator = {
             MovieIndicator(
@@ -116,6 +120,7 @@ private fun MovieTabContent(pagerState: PagerState) {
         state = pagerState,
         modifier = Modifier
             .fillMaxSize()
+            .testTag(stringResource(id = R.string.label_pager_tag))
     ) { index ->
         when (index) {
             0 -> TopRatedScreen()
