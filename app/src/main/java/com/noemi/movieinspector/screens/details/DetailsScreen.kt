@@ -70,7 +70,6 @@ import com.noemi.movieinspector.utils.getPoster
 fun DetailsScreen(movieId: Int, modifier: Modifier = Modifier) {
 
     val viewModel = hiltViewModel<MovieDetailsViewModel>()
-    val scope = rememberCoroutineScope()
     val context = LocalContext.current
 
     val movie by viewModel.outcomeState.collectAsStateWithLifecycle()
@@ -81,9 +80,7 @@ fun DetailsScreen(movieId: Int, modifier: Modifier = Modifier) {
     val isLoading by viewModel.loadingState.collectAsStateWithLifecycle()
 
     LaunchedEffect(key1 = Unit) {
-        scope.launch {
-            viewModel.getMovieDetails(movieId)
-        }
+        viewModel.getMovieDetails(movieId)
     }
 
     Column(
@@ -326,8 +323,6 @@ fun MovieShortDescription(
 @Composable
 fun MovieTrailer(trailer: Trailer, hasNetwork: Boolean, modifier: Modifier = Modifier) {
     val context = LocalContext.current
-
-    println("The trailer is: $trailer")
 
     Column(modifier = modifier.fillMaxWidth()) {
 
